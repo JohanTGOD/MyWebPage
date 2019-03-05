@@ -4,7 +4,7 @@
   "description": "Crud",
   "main": "index.js",
   "scripts": {
-    "start":"node server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -13,11 +13,11 @@
     "bcrypt": "^3.0.4",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "hbs": "^4.0.2",
+    "hbs": "^4.0.3",
     "i": "^0.3.6",
     "jsonwebtoken": "^8.5.0",
     "mongodb": "^3.1.13",
-    "mongoose": "^5.4.14",
+    "mongoose": "^5.4.17",
     "mongoose-unique-validator": "^2.0.2",
     "npm": "^6.8.0",
     "underscore": "^1.9.1"

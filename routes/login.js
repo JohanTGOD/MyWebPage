@@ -10,7 +10,7 @@ app.post('/login', function (req, res) {
     Usuario.findOne({usuario: body.usuario},(err,usuarioDB)=>{
 
         if (err) {
-            return res.status(500).json({
+            return res.status(400).json({
                 ok:false,
                 err
 
@@ -18,7 +18,7 @@ app.post('/login', function (req, res) {
         }
 
         if (!usuarioDB) {
-            if (err) {
+            
                 return res.status(400).json({
                     ok:false,
                     err:{
@@ -26,14 +26,14 @@ app.post('/login', function (req, res) {
                     }
     
                 })
-            }
+            
         }
 
         //El bcript lo uso para comparar lo que envian y lo comparo con la informacion encriptada en bd
         //Esto lo que quiere decir es que si no hizo match entra
         //valida que las contraseñas sean las mismas
         if (!bcript.compareSync(body.passwd, usuarioDB.passwd)) {
-            if (err) {
+           
                 return res.status(400).json({
                     ok:false,
                     err:{
@@ -41,7 +41,7 @@ app.post('/login', function (req, res) {
                     }
     
                 })
-            }
+            
         }
         let token = jwt.sign({
             usuario:usuarioDB

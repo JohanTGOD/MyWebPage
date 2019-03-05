@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 // Connection URL
-const url = 'mongodb://localhost:27017/miD';
+const url = process.env.URLDB;
  
 
  
