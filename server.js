@@ -8,5 +8,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(__dirname+'/public'))
 app.use(require('./routes/index'));
-app.listen(3000)
+app.listen(process.env.PORT,()=>{
+
+    console.log("Escuchando puerto: ",process.env.PORT)
+    })
 
