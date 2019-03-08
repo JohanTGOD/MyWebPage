@@ -27,6 +27,11 @@ let newUsuario= new Schema(
         passwd:{
             type:String,
             required:[true,"La contraseña es requerida"]
+        },
+        google:{
+            type:Boolean,
+            default:false
+            
         }
 
     }
