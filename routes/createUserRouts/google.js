@@ -9,7 +9,7 @@ const client = new OAuth2Client(process.env.CLIENT_ID);
 //Esta es una libreria muy grande de apoyo que funciona para dar mas propiedades a javascript node and mongo
 const _=require('underscore');
 const hbs= require('hbs');
-const Usuario = require('../models/data/singUp');
+const Usuario = require('../../models/createUserModel/userModel');
 
 
 

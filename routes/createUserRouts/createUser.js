@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const bcript= require('bcrypt')
-const Usuario= require('../models/data/singUp')
+const Usuario= require('../../models/createUserModel/userModel')
 
 
 
