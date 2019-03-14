@@ -19,7 +19,7 @@ app.set('view engine','hbs');
 
 
 app.get('/google', function (req, res) {
-  res.render('google')
+  res.render('./allAboutUsers/google')
 })
 
 
