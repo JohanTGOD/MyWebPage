@@ -539,7 +539,7 @@ section {
 	position: relative;
 	z-index: 2;
 	margin-top: -60px;
-	border-radius: 50%;
+	/*border-radius: 50%;*/
 }
 
 .team .title {
@@ -1027,7 +1027,7 @@ footer .social-footer li:hover a {
 }
 
 .margin-top {
-	margin-top: 150px;
+	margin-top: 70px;
 }
 
 @media(max-width:992px) {
