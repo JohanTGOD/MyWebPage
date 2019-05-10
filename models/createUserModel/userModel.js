@@ -2,6 +2,11 @@ const mongoose = require('mongoose');
 //Esto es para que los mensajes se entiendan
 const uniqueValidator= require('mongoose-unique-validator');
 
+let rolesValidos= {
+    values:['ADMIN_ROLE','USER_ROLE'],
+    message:'{VALUE} no es un rol valido'
+};
+
 let Schema=mongoose.Schema;
 
 let newUsuario= new Schema(
@@ -17,6 +22,7 @@ let newUsuario= new Schema(
         correo:{
             type:String,
             required:[true,"El correo es obligatorio"],
+            /**El unique hace que valide que el correo sea unico por usuario */
             unique:true
         },
         usuario:{
@@ -32,6 +38,15 @@ let newUsuario= new Schema(
             type:Boolean,
             default:false
             
+        },
+        role:{
+            type:String,
+            default:'USER_ROLE',
+            enum:rolesValidos
+        },
+        estado:{
+            type:Boolean,
+            default:true
         }
 
     }
@@ -47,7 +62,8 @@ newUsuario.methods.toJSON = function(){
     return userObject;
 }
 
-//Esto es para validaciones
+//Esto es para validaciones del correo
+//ya que la libreria unique solo se a puesto en el modelo-campo corro
 newUsuario.plugin(uniqueValidator,{
     message:'{PATH} debe de ser unico'
 })

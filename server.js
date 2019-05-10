@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //app.use(express.static(__dirname+'/public'))
 //Esta metodo de path me ayuda a no tener incovenientes en las ruta, si quiere puede hacer un clg 
 app.use(express.static(path.resolve(__dirname,'./public')));
-app.use(require('./routes/index'));
+app.use(require('./routes/myRoutes'));
 
 
 app.listen(process.env.PORT,()=>{

@@ -19,7 +19,8 @@ app.post('/enviarInfo', function (req, res) {
       apellido: body.apellido,
       correo: body.correo,
       usuario: body.usuario,
-      passwd: body.paswd
+      passwd: body.paswd,
+      role:body.role
 
     })
 
