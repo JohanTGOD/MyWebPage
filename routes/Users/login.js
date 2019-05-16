@@ -14,6 +14,7 @@ app.post('/login', function (req, res) {
     console.log("entro");
     let body = req.body;
     Usuario.findOne({usuario: body.user},(err,usuarioDB)=>{
+        console.log(body.user);
         console.log("entro2");
         if (err) {
             console.log("entro2.1");
@@ -57,9 +58,18 @@ app.post('/login', function (req, res) {
         },process.env.SEED,{expiresIn: process.env.CADUCIDAD_TOKEN});
 
         console.log("entroFinal");
-        res.render('./UserLogin/login',{
-            nombre: `${usuarioDB.nombre}`
+        res.json({
+            ok:true,
+            usuarioDB,
+            token,
+  
         })
+       // res.render('./UserLogin/login',{
+ 
+        //    nombre: `${usuarioDB.nombre}`
+       // })
+
+
 
 
     })

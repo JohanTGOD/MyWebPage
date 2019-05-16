@@ -27,6 +27,7 @@ let urlDB
         console.log("is here");
     }else{
         //'mongodb+srv://root:xNVaI4GC8c7QI85U@johan-vsxti.mongodb.net/cafe'
+        // La variable de abajo esta definida como una variable de heroku por lo que no se ve la info
         urlDB= process.env.MONGO_MYWEBPAGE
     }
   
