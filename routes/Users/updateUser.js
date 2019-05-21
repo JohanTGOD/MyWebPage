@@ -4,8 +4,9 @@ const bcript= require('bcrypt')
 const Usuario= require('../../models/createUserModel/userModel')
 // Esta libreria me trae funciones adicionales para nodejs
 const _=require('underscore');
+const {verificarToken,verificarRol} = require('../midleware/autenticacion');
 
-app.put('/updateUser/:id',function(req,res){
+app.put('/updateUser/:id',[verificarToken,verificarRol],function(req,res){
 
     // Esto es para tomar el id desde la url con un slash(/)
         //Ejemplo = {{url}}/updateUser/5c7f47b365f29f0db03a41ea            ->> Este es un ID de DB

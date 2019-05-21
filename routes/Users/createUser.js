@@ -2,10 +2,11 @@ const express = require('express')
 const app = express()
 const bcript= require('bcrypt')
 const Usuario= require('../../models/createUserModel/userModel')
+const {verificarToken,verificarRol} = require('../midleware/autenticacion');
 
 
-
-app.post('/enviarInfo', function (req, res) {
+//Tengo dos midelwares uno valida el token y el otro el rol del admin que es el unico que puede editar
+app.post('/enviarInfo',[verificarToken,verificarRol], function (req, res) {
 
     let body = req.body;
     console.log(body.paswd);

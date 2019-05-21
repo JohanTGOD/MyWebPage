@@ -2,8 +2,9 @@ const express = require('express')
 const app = express()
 const Usuario= require('../../models/createUserModel/userModel')
 const _=require('underscore');
+const {verificarToken,verificarRol} = require('../midleware/autenticacion');
 
-app.delete('/UserDefenitive/:id', function (req, res) {
+app.delete('/UserDefenitive/:id',[verificarToken,verificarRol], function (req, res) {
 
     let id = req.params.id;
 
@@ -35,7 +36,7 @@ app.delete('/UserDefenitive/:id', function (req, res) {
 
  })
 
- app.delete('/UserChangeStade/:id',function(req,res){
+ app.delete('/UserChangeStade/:id',[verificarToken,verificarRol],function(req,res){
 
     let id = req.params.id;
 
